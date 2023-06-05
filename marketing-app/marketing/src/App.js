@@ -2,28 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {
     createBrowserRouter,
-    RouterProvider
+    RouterProvider,
 } from 'react-router-dom';
 import { StylesProvider } from '@material-ui/core/styles';
-import Landing from './components/Landing';
-import Pricing from './components/Pricing';
 
-const routerFactory = createBrowserRouter([
-    {
-        path: '/',
-        element: <Landing />,
-    },
-    {
-        path: '/pricing',
-        element: <Pricing />,
-    }
-]);
-
-const App = () => {
+const App = ({ router }) => {
     return (
         <div>
             <StylesProvider>
-                <RouterProvider router={routerFactory}>
+                <RouterProvider router={router}>
                 </RouterProvider>
             </StylesProvider>
         </div>

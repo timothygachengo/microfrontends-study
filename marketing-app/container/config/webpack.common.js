@@ -7,16 +7,19 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.m?js$/,
+                test: /\.m?js/,
+                type: "javascript/auto",
+                resolve: {
+                    fullySpecified: false,
+                },
+            },
+            {
+                test: /\.(ts|tsx|js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader",
-                    options: {
-                        presets: ['@babel/preset-react', '@babel/preset-env'],
-                        plugins: ["@babel/plugin-transform-runtime", "@babel/plugin-proposal-class-properties"]
-                    }
-                }
-            }
+                },
+            },
         ]
     },
     plugins: [

@@ -11,8 +11,9 @@ const devConfig = {
     mode: 'development',
     devServer: {
         port: 3000,
-        historyApiFallback: {
-            index: 'index.html'
+        historyApiFallback: true,
+        headers: {
+            'Access-Control-Allow-Origin': '*'
         }
     },
     plugins: [
@@ -21,7 +22,17 @@ const devConfig = {
             remotes: {
                 marketing: 'marketing@http://localhost:3001/remoteEntry.js',
             },
-            shared: packageJson.dependencies
+            shared: {
+                ...packageJson.dependencies,
+                react: {
+                    singleton: true,
+                    requiredVersion: packageJson.dependencies.react,
+                },
+                "react-dom": {
+                    singleton: true,
+                    requiredVersion: packageJson.dependencies["react-dom"],
+                },
+            }
         }),
     ]
 }

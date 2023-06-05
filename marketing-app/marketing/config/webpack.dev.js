@@ -10,8 +10,9 @@ const devConfig = {
     mode: 'development',
     devServer: {
         port: 3001,
-        historyApiFallback: {
-            index: 'index.html'
+        historyApiFallback: true,
+        headers: {
+            'Access-Control-Allow-Origin': '*'
         }
     },
     plugins: [
@@ -21,7 +22,17 @@ const devConfig = {
             exposes: {
                 './MarketingApp': './src/bootstrap'
             },
-            shared: packageJson.dependencies
+            shared: {
+                ...packageJson.dependencies,
+                react: {
+                    singleton: true,
+                    requiredVersion: packageJson.dependencies.react,
+                },
+                "react-dom": {
+                    singleton: true,
+                    requiredVersion: packageJson.dependencies["react-dom"],
+                },
+            }
         }),
     ]
 }

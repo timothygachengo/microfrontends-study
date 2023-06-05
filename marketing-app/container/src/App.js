@@ -1,12 +1,10 @@
 import React from 'react';
-import MarketingApp from './components/MarketingApp';
+import { Router } from './routing/Router';
 
 const App = () => {
   return (
     <div>
-      <h1>Hi there!</h1>
-      <hr />
-      <MarketingApp />
+      <Router />
     </div>
   )
 }
