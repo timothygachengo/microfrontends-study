@@ -105,7 +105,7 @@ export default function SignIn({ onSignIn }) {
           </Button>
           <Grid container>
             <Grid item>
-              <Link to="/auth/signup">{"Don't have an account? Sign Up"}</Link>
+              <Link to="/signup">{"Don't have an account? Sign Up"}</Link>
             </Grid>
           </Grid>
         </form>

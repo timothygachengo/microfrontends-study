@@ -25,7 +25,7 @@ export function NavigationManager({ children }) {
   useEffect(() => {
     console.log("location", location);
     window.dispatchEvent(
-      new CustomEvent("[app1] navigated", { detail: location.pathname })
+      new CustomEvent("[auth] navigated", { detail: location.pathname })
     );
   }, [location]);
 

@@ -86,7 +86,7 @@ export default function Header({ signedIn, onSignOut }) {
             variant="outlined"
             className={classes.link}
             component={RouterLink}
-            to={signedIn ? '/' : '/auth/signin'}
+            to={signedIn ? '/' : '/auth'}
             onClick={onClick}
           >
             {signedIn ? 'Logout' : 'Login'}

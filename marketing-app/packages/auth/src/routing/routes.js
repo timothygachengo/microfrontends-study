@@ -19,11 +19,7 @@ export const routes = [
         ),
         children: [
             {
-                element: <Navigate to="/signin" />,
                 index: true,
-            },
-            {
-                path: 'signin',
                 element: <Signin />,
             },
             {
