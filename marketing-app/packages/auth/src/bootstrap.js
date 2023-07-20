@@ -7,6 +7,7 @@ const mount = ({
   mountPoint,
   initialPathname,
   routingStrategy,
+  onSignIn
 }) => {
   const router = createRouter({ strategy: routingStrategy, initialPathname });
   const root = createRoot(mountPoint);

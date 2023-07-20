@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 /**
  * @type {import('webpack').Configuration}
@@ -22,6 +23,9 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './public/index.html'
-        })
+        }),
+        new WebpackManifestPlugin({
+            fileName: 'manifest.json',
+        }),
     ]
 };
