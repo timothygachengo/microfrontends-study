@@ -4,6 +4,7 @@ import Progress from "../components/Progress";
 
 const MarketingAppLazy = lazy(() => import("../components/MarketingApp"));
 const AuthAppLazy = lazy(() => import("../components/AuthApp"));
+const CraAppLazy = lazy(() => import("../components/CraApp"));
 
 const Layout = ({ children }) => {
     return (
@@ -31,6 +32,16 @@ export const routes = [
             <Layout>
                 <Suspense fallback={<Progress/>}>
                     <AuthAppLazy />
+                </Suspense>
+            </Layout>
+        )
+    },
+    {
+        path: '/cra',
+        element: (
+            <Layout>
+                <Suspense fallback={<Progress/>}>
+                    <CraAppLazy />
                 </Suspense>
             </Layout>
         )
