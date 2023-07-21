@@ -6,7 +6,7 @@ const webpackConfig = require(webpackConfigPath);
 const override = config => {
     config.plugins.push(new ModuleFederationPlugin(require('../../modulefederation.config.js')));
 
-    config.output.publicPath = 'auto';
+    config.output.publicPath = 'http://localhost:3004/';
 
     return config;
 };
